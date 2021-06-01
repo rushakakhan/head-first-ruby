@@ -1,6 +1,20 @@
 class Bird
 
-  attr_accessor :name, :age
+  attr_reader :name, :age
+
+  def name=(value)
+    if value == ""
+      raise "Name can't be blank!"
+    end
+    @name = value
+  end
+
+  def age=(value)
+    if value < 0
+      raise "An age of #{value} isn't valid!"
+    end
+    @age = value
+  end
 
   def report_age
     puts "#{@name} is #{@age} years old."
@@ -17,7 +31,21 @@ end
 
 class Dog
 
-  attr_accessor :name, :age
+  attr_reader :name, :age
+
+  def name=(value)
+    if value == ""
+      raise "Name can't be blank!"
+    end
+    @name = value
+  end
+
+  def age=(value)
+    if value < 0
+      raise "An age of #{value} isn't valid!"
+    end
+    @age = value
+  end
 
   def report_age
     puts "#{@name} is #{@age} years old."
@@ -34,7 +62,21 @@ end
 
 class Cat
 
-  attr_accessor :name, :age
+  attr_reader :name, :age
+
+  def name=(value)
+    if value == ""
+      raise "Name can't be blank!"
+    end
+    @name = value
+  end
+
+  def age=(value)
+    if value < 0
+      raise "An age of #{value} isn't valid!"
+    end
+    @age = value
+  end
 
   def report_age
     puts "#{@name} is #{@age} years old."
@@ -61,11 +103,15 @@ willow = Cat.new
 willow.name = "Willow"
 willow.age = 4
 
-chirpy.move("tree")
+pop = Cat.new
+pop.name = "Poppy"
+pop.age = 2
 
+chirpy.move("tree")
 sandy.talk
 sandy.report_age
-
 willow.move("house")
 willow.report_age
+pop.report_age
+puts "Her name is #{pop.name}!"
 
