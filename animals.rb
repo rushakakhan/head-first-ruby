@@ -6,12 +6,12 @@ class Bird
     puts "#{@name} is #{@age} years old."
   end
 
-  def talk(name)
-    puts "#{name} says Chirp! Chirp!"
+  def talk
+    puts "#{@name} says Chirp! Chirp!"
   end
 
-  def move(name, destination)
-    puts "#{name} flies to the #{destination}."
+  def move(destination)
+    puts "#{@name} flies to the #{destination}."
   end
 end
 
@@ -23,12 +23,12 @@ class Dog
     puts "#{@name} is #{@age} years old."
   end
 
-  def talk(name)
-    puts "#{name} says Bark!"
+  def talk
+    puts "#{@name} says Bark!"
   end
 
-  def move(name, destination)
-    puts "#{name} runs to the #{destination}."
+  def move(destination)
+    puts "#{@name} runs to the #{destination}."
   end
 end
 
@@ -40,20 +40,32 @@ class Cat
     puts "#{@name} is #{@age} years old."
   end
 
-  def talk(name)
-    puts "#{name} says Meow!"
+  def talk
+    puts "#{@name} says Meow!"
   end
-  def move(name, destination)
-    puts "#{name} runs to the #{destination}."
+  def move(destination)
+    puts "#{@name} runs to the #{destination}."
   end
 end
 
-bird = Bird.new
-dog = Dog.new
-cat = Cat.new
+chirpy = Bird.new
+chirpy.name = "Chirpy"
+chirpy.age = 2
 
-bird.move("tree")
-dog.talk
-bird.talk
-cat.move("house")
+sandy = Dog.new
+sandy.name = "Sandy"
+sandy.age = 10
+
+
+willow = Cat.new
+willow.name = "Willow"
+willow.age = 4
+
+chirpy.move("tree")
+
+sandy.talk
+sandy.report_age
+
+willow.move("house")
+willow.report_age
 
